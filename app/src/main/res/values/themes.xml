@@ -13,4 +13,32 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MaterialThemeOulinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_12</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_12</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_12</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_12</item>
+        <item name="android:layout_marginStart">@dimen/dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dp_24</item>
+        <item name="android:layout_marginTop">@dimen/dp_32</item>
+    </style>
+
+    <style name="MaterialButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginStart">@dimen/dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dp_24</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:insetTop">@dimen/dp_0</item>
+        <item name="android:insetBottom">@dimen/dp_0</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    <style name="YellowMaterialButton" parent="MaterialButton">
+        <item name="android:backgroundTint">@color/yellow</item>
+    </style>
+    <style name="WhiteMaterialButton" parent="MaterialButton">
+        <item name="strokeColor">@color/text_color</item>
+        <item name="strokeWidth">@dimen/dp_1</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
 </resources>
