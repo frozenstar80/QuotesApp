@@ -1,6 +1,5 @@
 package com.example.quotesapp.domain.repository
-import com.example.quotesapp.data.LoginResponse
-import com.example.quotesapp.data.SignUpResponse
+import com.example.quotesapp.data.*
 import com.example.quotesapp.domain.api.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -22,5 +21,27 @@ class DataRepository
         val response = apiService.signUpUser(map )
         emit(response)
     }.flowOn(Dispatchers.IO)
+
+    suspend fun createProfile(map: HashMap<String,String>): Flow<CreateProfileResponse> = flow {
+        val response = apiService.createProfile(map )
+        emit(response)
+    }.flowOn(Dispatchers.IO)
+
+
+    suspend fun searchUser(map: HashMap<String,String>): Flow<SearchUserResponse> = flow {
+        val response = apiService.searchUser(map )
+        emit(response)
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun showOwnProfile(map: HashMap<String,String>): Flow<ShowOwnProfileResponse> = flow {
+        val response = apiService.showOwnProfile(map )
+        emit(response)
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun uploadUserFiles(map: HashMap<String,String>): Flow<UploadUserFileResponse> = flow {
+        val response = apiService.uploadUserFiles(map )
+        emit(response)
+    }.flowOn(Dispatchers.IO)
+
 
 }
