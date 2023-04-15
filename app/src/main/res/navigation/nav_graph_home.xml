@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_home.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home.xml"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.quotesapp.presentation.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_home_to_searchPeopleFragment"
+            app:destination="@id/searchPeopleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/documents"
+        android:name="com.example.quotesapp.presentation.fragment.DocumentsFragment"
+        android:label="fragment_documents"
+        tools:layout="@layout/fragment_documents" />
+    <fragment
+        android:id="@+id/video"
+        android:name="com.example.quotesapp.presentation.fragment.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" />
+    <fragment
+        android:id="@+id/photo"
+        android:name="com.example.quotesapp.presentation.fragment.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos" />
+    <fragment
+        android:id="@+id/searchPeopleFragment"
+        android:name="com.example.quotesapp.presentation.fragment.SearchPeopleFragment"
+        android:label="SearchPeopleFragment" />
 
 </navigation>

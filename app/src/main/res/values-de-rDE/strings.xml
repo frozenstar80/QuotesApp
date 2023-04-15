@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Denken Sie daran, App</string>
+    <string name="enter_email_id">E-Mail-ID eingeben</string>
+    <string name="forgot_password">Passwort vergessen</string>
+    <string name="login">Anmeldung</string>
+    <string name="password">Passwort</string>
+    <string name="register_now">Jetzt registrieren</string>
+    <string name="select_language">Sprache auswählen</string>
+    <string name="view_all_quotes">View all quotes</string>
+    <string name="nur_die_harten_kommen_in_den_garten">“Nur die Harten kommen\n in den Garten”</string>
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="login_sucess">Anmeldung erfolgreich</string>
+    <string name="create_profile">Profil erstellen</string>
+    <string name="register_sucess">Registrierung erfolgreich</string>
+    <string name="confirm_pass_toast">Confirm Password do not matches with Password. Please Check Your Password</string>
+    <string name="enter_pass_toast">Passwort eingeben</string>
+    <string name="verify_email_id">Überprüfen Sie die E-Mail-ID</string>
+    <string name="reset_password">Passwort zurücksetzen</string>
+    <string name="profile_photo">Profilfoto</string>
+    <string name="first_name">Vorname</string>
+    <string name="last_name">Familienname, Nachname</string>
+    <string name="relationship">Beziehung</string>
+    <string name="birth_date">Geburtsdatum</string>
+    <string name="date_of_death">Sterbedatum</string>
+    <string name="last_place_of_residence">Letzter Wohnsitz</string>
+    <string name="my_final_words">Meine letzten Worte</string>
+    <string name="what_i_want_to_share_with_you">Was ich mit dir teilen möchte</string>
+    <string name="what_i_guessed">Was ich vermutet habe</string>
+    <string name="quotations">Zitate</string>
+    <string name="home">Heim</string>
+    <string name="documents">Dokumentieren</string>
+    <string name="video">Video</string>
+    <string name="photo">Foto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hallo">👋🏽 Hallo</string>
+    <string name="fisher">Fisher</string>
+    <string name="search_people">Personen suchen</string>
+    <string name="ideas">Ideen</string>
+    <string name="burial">Beerdigung</string>
+    <string name="motivation">Motivation</string>
+    <string name="connections">Verknüpfungen</string>
+</resources>

@@ -11,4 +11,9 @@
     <color name="text_color">#52420D</color>
     <color name="grey_bg_color">#ECF1F4</color>
     <color name="hint_color">#8D897B</color>
+    <color name="create_profile_text_color">#121212</color>
+    <color name="splash_bg">#1E1E1E</color>
+    <color name="forget_password_color">#8D897B</color>
+    <color name="light_brown">#D7CEB0</color>
+    <color name="text_color_black">#121212</color>
 </resources>

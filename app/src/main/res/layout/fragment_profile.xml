@@ -1,6 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@color/grey_bg_color"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@color/grey_bg_color"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dp_24">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_47"
+        android:text="@string/create_profile"
+        android:layout_marginStart="@dimen/dp_30"
+        android:textColor="@color/create_profile_text_color"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
+        android:layout_width="@dimen/dp_104"
+        android:layout_height="@dimen/dp_104"
+        android:layout_marginTop="@dimen/dp_26"
+        android:background="@drawable/white_corner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView4"
+        app:srcCompat="@drawable/add_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_profile_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/profile_photo"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/forget_password_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView4" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        style="@style/MaterialThemeOulinedBox"
+        app:layout_constraintTop_toBottomOf="@id/txt_profile_pic">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Previous Name"
+        style="@style/MaterialThemeOulinedBox"
+        app:layout_constraintTop_toBottomOf="@id/field_first_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_before"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="New Name"
+        style="@style/MaterialThemeOulinedBox"
+        app:layout_constraintTop_toBottomOf="@id/field_last_name"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_relationship"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wife/Husband Name"
+        app:layout_constraintTop_toBottomOf="@id/field_before"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_birth_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/birth_date"
+        app:endIconDrawable="@drawable/calendar_icon"
+        app:endIconMode="custom"
+        app:layout_constraintTop_toBottomOf="@id/field_resindance"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_birth_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="@color/text_color_black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_dod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/date_of_death"
+        app:endIconDrawable="@drawable/calendar_icon"
+        app:endIconMode="custom"
+        app:layout_constraintTop_toBottomOf="@id/field_birth_date"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_dod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="@color/text_color_black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_resindance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/last_place_of_residence"
+        app:layout_constraintTop_toBottomOf="@id/field_relationship"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_resindance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_quot"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:hint="@string/quotations"
+        app:layout_constraintTop_toBottomOf="@id/field_dod"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_quot"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_guessed"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:hint="@string/what_i_guessed"
+        app:layout_constraintTop_toBottomOf="@id/field_quot"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_guessed"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_share_with_you"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        app:layout_constraintTop_toBottomOf="@id/field_guessed"
+        android:hint="@string/what_i_want_to_share_with_you"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_share_with_you"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_my_final_word"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:hint="@string/my_final_words"
+        app:layout_constraintTop_toBottomOf="@id/field_share_with_you"
+        style="@style/MaterialThemeOulinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_my_final_word"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_create_profile"
+        android:layout_width="match_parent"
+        android:text="@string/create_profile"
+        app:cornerRadius="30dp"
+        style="@style/YellowMaterialButton"
+        android:layout_marginTop="113dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/field_my_final_word"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

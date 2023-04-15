@@ -1,17 +1,19 @@
 package com.example.quotesapp.presentation.fragment
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.quotesapp.databinding.FragmentLaunchScreenBinding
+import androidx.navigation.fragment.findNavController
+import com.example.quotesapp.databinding.FragmentHomeBinding
 
 
-@SuppressLint("CustomSplashScreen")
-class HomeFragment : BaseFragment<FragmentLaunchScreenBinding>() {
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLaunchScreenBinding =
-        FragmentLaunchScreenBinding::inflate
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding =
+        FragmentHomeBinding::inflate
 
     override fun setup() {
+        binding?.txtSearchView?.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeToSearchPeopleFragment())
+        }
 
     }
 }

@@ -4,42 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/launch_screen_bg">
+    android:id="@+id/launch_screen_root">
 
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        app:srcCompat="@drawable/remember"
-        app:tint="@color/yellow" />
+        app:srcCompat="@drawable/launch_screen_img" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_black_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/black_dradient" />
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="10dp"
         android:gravity="center"
+        android:elegantTextHeight="true"
         android:text="@string/nur_die_harten_kommen_in_den_garten"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="italic"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+         />
 
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_view_all_quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="@dimen/dp_24"
         android:background="@drawable/white_rounded_bg"
         android:text="@string/view_all_quotes"
         android:padding="10dp"
@@ -49,6 +61,82 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_quote" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_32"
+        android:backgroundTint="@android:color/transparent"
+        android:background="@drawable/cardview_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/img_black_gradient"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_all_quote">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_shape"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:text="@string/select_language"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rad_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/language_selector"
+                    android:button="@null"
+                    android:padding="@dimen/dp_16"
+                    android:checked="true"
+                    android:text="@string/english"
+                    android:textColor="@color/text_color" />
+
+                <RadioButton
+                    android:id="@+id/rad_german"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/language_selector_german"
+                    android:button="@null"
+                    android:padding="@dimen/dp_16"
+                    android:text="@string/german"
+                    android:textColor="@color/text_color" />
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/YellowMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_40"
+                android:text="@string/login"
+                app:cornerRadius="30dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                style="@style/WhiteMaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/register_now" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_home.xml"
-    app:startDestination="@id/splashScreenFragment">
+    android:id="@+id/nav_graph_main.xml"
+    app:startDestination="@id/launchScreenFragment">
 
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.example.quotesapp.presentation.fragment.SplashScreenFragment"
-        android:label="SplashScreenFragment" >
-        <action
-            android:id="@+id/action_splashScreenFragment_to_launchScreenFragment"
-            app:destination="@id/launchScreenFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/launchScreenFragment"
         android:name="com.example.quotesapp.presentation.fragment.LaunchScreenFragment"
         android:label="LaunchScreenFragment" >
+
         <action
-            android:id="@+id/action_launchScreenFragment_to_languageChooserBottomSheetFragment"
-            app:destination="@id/languageChooserBottomSheetFragment" />
+            android:id="@+id/action_launchScreenFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_launchScreenFragment_to_loginBottomSheetFragment"
+            app:destination="@id/loginBottomSheetFragment" />
+        <action
+            android:id="@+id/action_launchScreenFragment_to_signUpBottomSheetFragment"
+            app:destination="@id/signUpBottomSheetFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.quotesapp.presentation.fragment.ProfileFragment"
         android:label="ProfileFragment" />
     <dialog
-        android:id="@+id/languageChooserBottomSheetFragment"
-        android:name="com.example.quotesapp.presentation.bottomSheet.LanguageChooserBottomSheetFragment"
-        android:label="LanguageChooserBottomSheetFragment" >
-        <action
-            android:id="@+id/action_languageChooserBottomSheetFragment_to_loginBottomSheetFragment"
-            app:destination="@id/loginBottomSheetFragment" />
-        <action
-            android:id="@+id/action_languageChooserBottomSheetFragment_to_signUpBottomSheetFragment"
-            app:destination="@id/signUpBottomSheetFragment" />
-    </dialog>
-    <dialog
         android:id="@+id/loginBottomSheetFragment"
         android:name="com.example.quotesapp.presentation.bottomSheet.LoginBottomSheetFragment"
         android:label="LoginBottomSheetFragment" >
         <action
             android:id="@+id/action_loginBottomSheetFragment_to_signUpBottomSheetFragment"
-            app:destination="@id/signUpBottomSheetFragment" />
+            app:destination="@id/signUpBottomSheetFragment"
+            app:popUpTo="@id/loginBottomSheetFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginBottomSheetFragment_to_forgetPasswordBottomSheetFragment"
+            app:destination="@id/forgetPasswordBottomSheetFragment"
+            app:popUpTo="@id/loginBottomSheetFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginBottomSheetFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/nav_graph_main.xml"
+            app:popUpToInclusive="true"/>
     </dialog>
     <dialog
         android:id="@+id/signUpBottomSheetFragment"
@@ -52,6 +50,33 @@
         android:label="SignUpBottomSheetFragment" >
         <action
             android:id="@+id/action_signUpBottomSheetFragment_to_loginBottomSheetFragment"
-            app:destination="@id/loginBottomSheetFragment" />
+            app:destination="@id/loginBottomSheetFragment"
+            app:popUpTo="@id/signUpBottomSheetFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_signUpBottomSheetFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/nav_graph_main.xml"
+            app:popUpToInclusive="true"/>
+    </dialog>
+    <dialog
+        android:id="@+id/forgetPasswordBottomSheetFragment"
+        android:name="com.example.quotesapp.presentation.bottomSheet.ForgetPasswordBottomSheetFragment"
+        android:label="ForgetPasswordBottomSheetFragment" >
+        <action
+            android:id="@+id/action_forgetPasswordBottomSheetFragment_to_resetPasswordBottomSheetFragment"
+            app:destination="@id/resetPasswordBottomSheetFragment"
+            />
+    </dialog>
+    <dialog
+        android:id="@+id/resetPasswordBottomSheetFragment"
+        android:name="com.example.quotesapp.presentation.bottomSheet.ResetPasswordBottomSheetFragment"
+        android:label="ResetPasswordBottomSheetFragment" >
+        <action
+            android:id="@+id/action_resetPasswordBottomSheetFragment_to_loginBottomSheetFragment"
+            app:destination="@id/loginBottomSheetFragment"
+            app:popUpTo="@id/forgetPasswordBottomSheetFragment"
+            app:popUpToInclusive="true"/>
     </dialog>
 </navigation>

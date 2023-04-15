@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/txt_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        app:searchIcon="@drawable/search_icon"
+        android:layout_marginHorizontal="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_47"
+        android:background="@drawable/search_view_background"
+        android:drawablePadding="@dimen/dp_14"
+        android:gravity="center_vertical"
+        app:defaultQueryHint="@string/search_people"
+        android:text="@string/search_people"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_search_view"
+        app:layout_constraintEnd_toEndOf="@+id/txt_search_view"
+        app:layout_constraintTop_toTopOf="@+id/txt_search_view"
+        app:srcCompat="@drawable/ic_clear_text" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="Search Result (1)"
+        android:textColor="@color/hint_color"
+        app:layout_constraintStart_toStartOf="@+id/txt_search_view"
+        app:layout_constraintTop_toBottomOf="@+id/txt_search_view" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

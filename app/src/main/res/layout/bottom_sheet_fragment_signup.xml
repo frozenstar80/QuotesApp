@@ -2,9 +2,9 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/grey_bg_color"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dp_24"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -56,13 +56,6 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_24"
-        android:layout_marginTop="@dimen/dp_12"
-        android:text="@string/forgot_password"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register_user"

@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey_bg_color">
+    android:paddingBottom="@dimen/dp_24"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/field_email"
@@ -40,10 +40,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_forget_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_24"
         android:layout_marginTop="@dimen/dp_12"
+        android:textColor="@color/forget_password_color"
         android:text="@string/forgot_password"/>
 
     <com.google.android.material.button.MaterialButton
