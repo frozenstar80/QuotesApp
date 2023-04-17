@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_home_to_searchPeopleFragment"
             app:destination="@id/searchPeopleFragment" />
+        <action
+            android:id="@+id/action_home_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/documents"
@@ -31,6 +34,22 @@
     <fragment
         android:id="@+id/searchPeopleFragment"
         android:name="com.example.quotesapp.presentation.fragment.SearchPeopleFragment"
-        android:label="SearchPeopleFragment" />
+        android:label="SearchPeopleFragment" >
+        <action
+            android:id="@+id/action_searchPeopleFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.example.quotesapp.presentation.fragment.ProfileDetailsFragment"
+        android:label="ProfileDetailsFragment" >
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="com.example.quotesapp.presentation.fragment.CreateProfileFragment"
+        android:label="CreateProfileFragment" />
 
 </navigation>

@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.quotesapp.data.LoginResponse
-import com.example.quotesapp.data.SignUpResponse
+import com.example.quotesapp.data.RecentSearchResponse
+import com.example.quotesapp.data.SearchUserResponse
 import com.example.quotesapp.domain.repository.DataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -13,32 +14,29 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SignUpViewModel @Inject constructor(
+class SearchPeopleViewModel @Inject constructor(
     private val dataRepository: DataRepository
 ) : ViewModel() {
-    private val _postLiveData: MutableLiveData<SignUpResponse> = MutableLiveData()
+    private val _postLiveData: MutableLiveData<SearchUserResponse> = MutableLiveData()
     val postLiveData get() = _postLiveData
+    private val _recentSearchLiveData: MutableLiveData<RecentSearchResponse> = MutableLiveData()
+    val recentSearchLiveData get() = _recentSearchLiveData
 
-
-    fun signInUser(map: HashMap<String,String>){
+    fun searchPeople(keyword:String,token:String){
         viewModelScope.launch {
-            dataRepository.getSignUpData(map).catch { e->
-                Log.d("register", "register: ${e.message}")
+            dataRepository.searchUser(keyword,token).catch { e->
+                Log.d("login", "login: ${e.message}")
             }.collect{response->
                 _postLiveData.value = response
             }
         }
     }
-
-    private val _loginLiveData: MutableLiveData<LoginResponse> = MutableLiveData()
-    val loginLiveData get() = _loginLiveData
-
-    fun loginUser(map: HashMap<String,String>){
+    fun recentUsers(token:String){
         viewModelScope.launch {
-            dataRepository.getLoginData(map).catch { e->
+            dataRepository.recentSearchedUser(token).catch { e->
                 Log.d("login", "login: ${e.message}")
             }.collect{response->
-                _loginLiveData.value = response
+                recentSearchLiveData.value = response
             }
         }
     }

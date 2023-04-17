@@ -1,9 +1,8 @@
 package com.example.quotesapp.domain.api
 
 import com.example.quotesapp.data.*
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import okhttp3.MultipartBody
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -17,24 +16,27 @@ interface ApiService {
         @Body map : HashMap<String,String>
     ): SignUpResponse
 
-    @POST("api/user/upload/{file Type}")
+    @Multipart
+    @POST("api/user/upload/image")
     suspend fun uploadUserFiles(
-        @Body map : HashMap<String,String>
+        @Part image: MultipartBody.Part?
     ): UploadUserFileResponse
 
     @POST("api/user/create-profile/{id}")
     suspend fun createProfile(
-        @Body map : HashMap<String,String>
+        @Body map : HashMap<String,Any?>,
+        @Path("id") id:String
     ): CreateProfileResponse
 
-    @GET("api/user/create-profile/{id}")
-    suspend fun showOwnProfile(
-        @Body map : HashMap<String,String>
-    ): ShowOwnProfileResponse
+    @GET("api/user/show")
+    suspend fun showOwnProfile(): ShowOwnProfileResponse
 
+    @GET("api/search/recent")
+    suspend fun recentSearchApi(@Header("Authorization") token:String): RecentSearchResponse
 
-    @GET("api/user/create-profile/{id}")
-    suspend fun searchUser(
-        @Body map : HashMap<String,String>
-    ): SearchUserResponse
+    @GET("api/user/view-profile/{id}/true")
+    suspend fun showOtherUserProfile(@Path("id") id:String,@Header("Authorization") token:String): RecentSearchResponse
+
+    @GET("api/search/show/{name}")
+    suspend fun searchUser(@Path("name") name:String,@Header("Authorization") token:String): SearchUserResponse
 }

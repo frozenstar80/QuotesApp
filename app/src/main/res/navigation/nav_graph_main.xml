@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.quotesapp.presentation.fragment.ProfileFragment"
+        android:name="com.example.quotesapp.presentation.fragment.CreateProfileFragment"
         android:label="ProfileFragment" />
     <dialog
         android:id="@+id/loginBottomSheetFragment"

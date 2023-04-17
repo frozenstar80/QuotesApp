@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.quotesapp.data.CreateProfileResponse
 import com.example.quotesapp.data.ShowOwnProfileResponse
 import com.example.quotesapp.domain.repository.DataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,15 +12,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ShowOwnViewModel @Inject constructor(
+class ProfileDetailsViewModel @Inject constructor(
     private val dataRepository: DataRepository
 ) : ViewModel() {
     private val _postLiveData: MutableLiveData<ShowOwnProfileResponse> = MutableLiveData()
     val postLiveData get() = _postLiveData
 
-    fun showOwnProfile(map: HashMap<String,String>){
+    fun showOwnProfile(){
         viewModelScope.launch {
-            dataRepository.showOwnProfile(map).catch { e->
+            dataRepository.showOwnProfile().catch { e->
                 Log.d("data", "endpoint: ${e.message}")
             }.collect{response->
                 _postLiveData.value = response

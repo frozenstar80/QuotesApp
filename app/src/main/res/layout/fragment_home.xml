@@ -16,10 +16,10 @@
         android:textSize="@dimen/sp_20"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appCompatImageView5" />
+        app:layout_constraintTop_toTopOf="@+id/img_profile_pic" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView3"
+        android:id="@+id/txt_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_22"
@@ -35,17 +35,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView5"
-        app:layout_constraintEnd_toStartOf="@+id/appCompatImageView5"
-        app:layout_constraintTop_toTopOf="@+id/appCompatImageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/img_profile_pic"
+        app:layout_constraintEnd_toStartOf="@+id/img_profile_pic"
+        app:layout_constraintTop_toTopOf="@+id/img_profile_pic"
         app:srcCompat="@drawable/notification" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_profile_pic"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        app:shapeAppearanceOverlay="@style/RoundedCircle"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="22dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
@@ -64,7 +66,7 @@
         android:paddingStart="@dimen/dp_16"
         android:text="@string/search_people"
         android:textColor="@color/hint_color"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_name"
         tools:layout_editor_absoluteX="24dp" />
 
     <androidx.appcompat.widget.AppCompatImageView

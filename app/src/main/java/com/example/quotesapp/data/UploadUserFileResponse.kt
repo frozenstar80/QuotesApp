@@ -9,12 +9,7 @@ data class UploadUserFileResponse(
     @SerializedName("data"    ) var data    : ArrayList<Data> = arrayListOf()
 
 )
-
-
-
 data class Data (
-
     @SerializedName("name" ) var name : String? = null,
     @SerializedName("file" ) var file : String? = null
-
 )

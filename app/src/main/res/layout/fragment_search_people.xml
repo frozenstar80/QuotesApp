@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/grey_bg_color"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_bg_color"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/grey_bg_color">
 
-    <androidx.appcompat.widget.SearchView
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/txt_search_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_52"
-        app:searchIcon="@drawable/search_icon"
         android:layout_marginHorizontal="@dimen/dp_24"
         android:layout_marginTop="@dimen/dp_47"
         android:background="@drawable/search_view_background"
+        android:drawableStart="@drawable/search_icon"
         android:drawablePadding="@dimen/dp_14"
         android:gravity="center_vertical"
-        app:defaultQueryHint="@string/search_people"
-        android:text="@string/search_people"
+        android:maxLines="1"
+        android:paddingStart="@dimen/dp_16"
+        android:paddingEnd="44dp"
+        android:singleLine="true"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_clear_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp_16"
+        android:padding="@dimen/dp_16"
         app:layout_constraintBottom_toBottomOf="@+id/txt_search_view"
         app:layout_constraintEnd_toEndOf="@+id/txt_search_view"
         app:layout_constraintTop_toTopOf="@+id/txt_search_view"
@@ -31,16 +40,61 @@
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView5"
+        android:id="@+id/txt_no_of_people_found"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="@dimen/dp_24"
-        android:text="Search Result (1)"
+        android:gravity="center"
+        android:text=""
+        android:visibility="gone"
         android:textColor="@color/hint_color"
         app:layout_constraintStart_toStartOf="@+id/txt_search_view"
         app:layout_constraintTop_toBottomOf="@+id/txt_search_view" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_searched_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="4"
+        android:visibility="gone"
+        tools:listitem="@layout/item_search_people"
+        android:layout_marginHorizontal="@dimen/dp_24"
+        app:layout_constraintTop_toBottomOf="@+id/txt_no_of_people_found"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_recent_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:layout_marginTop="@dimen/dp_24"
+        android:textColor="@color/hint_color"
+        app:layout_constraintStart_toStartOf="@+id/txt_search_view"
+        app:layout_constraintTop_toBottomOf="@+id/rv_searched_people" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recent_searched_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="4"
+        android:layout_marginTop="@dimen/dp_8"
+        tools:listitem="@layout/item_search_people"
+        android:layout_marginHorizontal="@dimen/dp_24"
+        app:layout_constraintTop_toBottomOf="@+id/txt_recent_search"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -29,10 +29,17 @@ class LoginBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentLogi
            loginViewModel.postLiveData.observe(this){
                if (it.status==false) toast(it.message)
                else{
+                   val photo = if (it.data?.user?.photos?.isEmpty() == true) "" else it.data?.user?.photos?.get(0)
+                   savedPrefManager.putLoginDetails(it?.data?.token,it?.data?.user?.fullName,photo,it?.data?.user?.Id)
                    savedPrefManager.putLogin(true)
                    toast(resources.getString(R.string.login_sucess))
-                   startActivity(Intent(requireActivity(), HomeActivity::class.java))
-                   requireActivity().finish()
+                   if (it?.data?.user?.fullName?.isNotEmpty() == true) {
+                       startActivity(Intent(requireActivity(), HomeActivity::class.java))
+                       requireActivity().finish()
+                   }
+                   else{
+                       findNavController().navigate(LoginBottomSheetFragmentDirections.actionLoginBottomSheetFragmentToProfileFragment())
+                   }
                    }
                }
 

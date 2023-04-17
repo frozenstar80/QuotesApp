@@ -41,4 +41,24 @@
     <string name="burial">Burial</string>
     <string name="motivation">Motivation</string>
     <string name="connections">Connections</string>
+    <string name="previous_name">Previous Name</string>
+    <string name="new_name">New Name</string>
+    <string name="wife_husband_name">Wife/Husband Name</string>
+    <string name="upload_profile_picture_toast">Please Upload Your Profile Picture</string>
+    <string name="full_name_toast">Please Enter Your Full Name</string>
+    <string name="profile_image_change_error">Profile Image change error</string>
+    <string name="profile_created_successfuly">Profile Created Successfully</string>
+    <string name="error_occured_pic_upload">Some Error Occurred While Uploading Profile Image. Please Try Again</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="grant_read_permission">Please Grant Permission to Read Storage</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="search_result">Search Result</string>
+    <string name="friends">Friends</string>
+    <string name="acquaintance">Acquaintance</string>
+    <string name="exchange">Exchange</string>
+    <string name="document">Document</string>
+    <string name="pictures">Pictures</string>
+    <string name="videos">Videos</string>
+    <string name="recent_search">Recent Result</string>
 </resources>

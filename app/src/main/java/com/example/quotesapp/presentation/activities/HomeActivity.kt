@@ -19,7 +19,6 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setLocale("de")
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -30,14 +29,5 @@ class HomeActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(binding.bottomNavView, navController)
 
-    }
-
-    private fun setLocale(lang: String?) {
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val resources: Resources = getResources()
-        val config: Configuration = resources.configuration
-        config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
     }
 }

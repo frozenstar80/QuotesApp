@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.quotesapp.util.SavedPrefManager
+import dagger.hilt.android.AndroidEntryPoint
 
 abstract class BaseFragment<T: ViewBinding>  : Fragment() {
     protected var binding: T? = null
@@ -48,6 +49,7 @@ abstract class BaseFragment<T: ViewBinding>  : Fragment() {
     fun toast(message:String?){
         Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
+
 
 
 }

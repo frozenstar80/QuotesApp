@@ -20,6 +20,9 @@
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textCursorDrawable="@color/black"
+            android:maxLines="1"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -37,6 +40,10 @@
             android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textCursorDrawable="@color/black"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -46,13 +53,16 @@
         android:layout_width="match_parent"
         app:endIconMode="password_toggle"
         android:layout_height="wrap_content"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         style="@style/MaterialThemeOulinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_conf_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textCursorDrawable="@color/black"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

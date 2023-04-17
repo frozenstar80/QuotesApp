@@ -6,11 +6,13 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 import kotlinx.coroutines.flow.flowOn
+import okhttp3.MultipartBody
 import javax.inject.Inject
 
 
-class DataRepository
-@Inject constructor(private val apiService: ApiService) {
+class DataRepository @Inject constructor(private val apiService: ApiService) {
+
+    var authorization = "Bearer "
 
     suspend fun getLoginData(map : HashMap<String,String>): Flow<LoginResponse> = flow {
         val response = apiService.loginUser(map)
@@ -22,24 +24,29 @@ class DataRepository
         emit(response)
     }.flowOn(Dispatchers.IO)
 
-    suspend fun createProfile(map: HashMap<String,String>): Flow<CreateProfileResponse> = flow {
-        val response = apiService.createProfile(map )
+    suspend fun createProfile(map: HashMap<String,Any?>,id:String): Flow<CreateProfileResponse> = flow {
+        val response = apiService.createProfile(map,id )
         emit(response)
     }.flowOn(Dispatchers.IO)
 
 
-    suspend fun searchUser(map: HashMap<String,String>): Flow<SearchUserResponse> = flow {
-        val response = apiService.searchUser(map )
+    suspend fun searchUser(name:String,token:String): Flow<SearchUserResponse> = flow {
+        val response = apiService.searchUser(name,authorization+token )
         emit(response)
     }.flowOn(Dispatchers.IO)
 
-    suspend fun showOwnProfile(map: HashMap<String,String>): Flow<ShowOwnProfileResponse> = flow {
-        val response = apiService.showOwnProfile(map )
+    suspend fun recentSearchedUser(token:String): Flow<RecentSearchResponse> = flow {
+        val response = apiService.recentSearchApi(authorization+token )
         emit(response)
     }.flowOn(Dispatchers.IO)
 
-    suspend fun uploadUserFiles(map: HashMap<String,String>): Flow<UploadUserFileResponse> = flow {
-        val response = apiService.uploadUserFiles(map )
+    suspend fun showOwnProfile(): Flow<ShowOwnProfileResponse> = flow {
+        val response = apiService.showOwnProfile()
+        emit(response)
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun uploadUserFiles(image: MultipartBody.Part?,file:String): Flow<UploadUserFileResponse> = flow {
+        val response = apiService.uploadUserFiles(image )
         emit(response)
     }.flowOn(Dispatchers.IO)
 

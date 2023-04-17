@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         savedPrefManager = SavedPrefManager(this)
-        locale("de")
+        locale(savedPrefManager.getLocale().toString())
         setContentView(R.layout.activity_splash)
         val window = window
 

@@ -20,6 +20,7 @@ class SignUpBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentSig
 
     private val signUpViewModel by viewModels<SignUpViewModel>()
     private val launchScreenViewModel by activityViewModels<SharedLaunchScreenViewModel>()
+    val map = HashMap<String, String>()
 
     override fun setup() {
         launchScreenViewModel.apply {
@@ -28,7 +29,16 @@ class SignUpBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentSig
         signUpViewModel.postLiveData.observe(this){
             if (it.status==false) toast(it.message)
             else{
-                toast(resources.getString(R.string.register_sucess))
+                map.put("email", binding?.edtEmail?.text.toString().trim())
+                map.put("password", binding?.edtPassword?.text.toString().trim())
+                signUpViewModel.loginUser(map)
+            }
+        }
+        signUpViewModel.loginLiveData.observe(this){
+            if (it.status==false) toast(it.message)
+            else{
+                val photo = if (it.data?.user?.photos?.isEmpty() == true) "" else it.data?.user?.photos?.get(0)
+                savedPrefManager.putLoginDetails(it?.data?.token,it?.data?.user?.fullName,photo,it?.data?.user?.Id)
                 registrationSuccessful()
             }
         }
@@ -37,7 +47,7 @@ class SignUpBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentSig
                 val map = HashMap<String, String>()
                 map.put("email", binding?.edtEmail?.text.toString().trim())
                 map.put("password", binding?.edtPassword?.text.toString().trim())
-                signUpViewModel.getMemes(map)
+                signUpViewModel.signInUser(map)
             }
             }
         binding?.btnLogin?.setOnClickListener {
@@ -46,6 +56,8 @@ class SignUpBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentSig
     }
 
     private fun registrationSuccessful() {
+        savedPrefManager.putLogin(true)
+        toast(resources.getString(R.string.register_sucess))
         findNavController().navigate(SignUpBottomSheetFragmentDirections.actionSignUpBottomSheetFragmentToProfileFragment())
     }
     private fun validation():Boolean{

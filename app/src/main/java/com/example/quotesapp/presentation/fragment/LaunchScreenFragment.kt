@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.quotesapp.databinding.FragmentLaunchScreenBinding
 import com.example.quotesapp.presentation.activities.MainActivity
 import com.example.quotesapp.presentation.viewModel.SharedLaunchScreenViewModel
+import com.example.quotesapp.util.locale
 import java.util.*
 
 
@@ -40,14 +41,21 @@ class LaunchScreenFragment : BaseFragment<FragmentLaunchScreenBinding>() {
         binding?.radEnglish?.setOnClickListener {
             binding?.radEnglish?.isChecked = true
             binding?.radGerman?.isChecked = false
-
+            callRefreshText("en")
         }
         binding?.radGerman?.setOnClickListener {
             binding?.radGerman?.isChecked = true
             binding?.radEnglish?.isChecked = false
+            callRefreshText("de")
         }
 
 
+    }
+
+    private fun callRefreshText(lang:String){
+        savedPrefManager.putLocale(lang)
+        locale(lang)
+        requireActivity().recreate()
     }
 
 
