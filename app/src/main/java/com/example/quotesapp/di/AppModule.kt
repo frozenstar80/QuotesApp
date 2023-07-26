@@ -2,6 +2,7 @@ package com.example.quotesapp.di
 
 import com.example.quotesapp.domain.api.ApiService
 import com.example.quotesapp.util.Constants
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +12,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
@@ -23,9 +25,11 @@ class AppModule {
     @Singleton
     fun retrofitInstance(): Retrofit = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().serializeNulls().create()))
         .client(
             OkHttpClient.Builder().apply {
+                readTimeout(600,TimeUnit.SECONDS)
+                writeTimeout(600,TimeUnit.SECONDS)
         addInterceptor(
             Interceptor { chain ->
                 val builder = chain.request().newBuilder()
@@ -34,6 +38,7 @@ class AppModule {
             }
         )
                 addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+
     }.build()
     )
         .build()

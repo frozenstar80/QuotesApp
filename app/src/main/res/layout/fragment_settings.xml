@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/grey_bg_color"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="@string/settings"
+        android:drawablePadding="@dimen/dp_20"
+        android:drawableStart="@drawable/back_btn"
+        android:textColor="@color/black"
+        android:textSize="22sp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version_1_0v"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_30"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="@string/terms_amp_conditions"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logout"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="@string/logout"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="@string/delete_account"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

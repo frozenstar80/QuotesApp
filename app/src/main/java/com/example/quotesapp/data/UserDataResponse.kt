@@ -1,7 +1,10 @@
 package com.example.quotesapp.data
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class UserDataResponse(
     @SerializedName("_id"                       ) var Id                     : String?           = null,
     @SerializedName("full_name"                 ) var fullName               : String?           = null,
@@ -26,5 +29,9 @@ data class UserDataResponse(
     @SerializedName("is_member_plus_profile"    ) var isMemberPlusProfile    : Boolean?          = null,
     @SerializedName("createdAt"                 ) var createdAt              : String?           = null,
     @SerializedName("updatedAt"                 ) var updatedAt              : String?           = null,
-    @SerializedName("__v"                       ) var _v                     : Int?              = null
-)
+    @SerializedName("__v"                       ) var _v                     : Int?              = null,
+    @SerializedName("is_permission") var isAccepted: Boolean = false,
+    @SerializedName("is_already_request_sent") var isRequestSent: Boolean = false,
+    @SerializedName("member_plus"               ) var memberPlus             : ArrayList<UserDataResponse> = arrayListOf(),
+    @SerializedName("is_user") var isUser : String?=null
+):Parcelable

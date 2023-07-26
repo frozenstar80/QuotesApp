@@ -1,5 +1,6 @@
 package com.example.quotesapp.presentation.bottomSheet
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.viewbinding.ViewBinding
 import com.example.quotesapp.util.SavedPrefManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+
 
 abstract class BaseBottomSheetFragment<T: ViewBinding>  : BottomSheetDialogFragment() {
     protected var binding: T? = null
@@ -35,6 +38,13 @@ abstract class BaseBottomSheetFragment<T: ViewBinding>  : BottomSheetDialogFragm
         savedPrefManager = SavedPrefManager(requireContext())
         setup()
 
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val bottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
+        bottomSheetDialog.setCancelable(false)
+        bottomSheetDialog.setCanceledOnTouchOutside(false)
+        return bottomSheetDialog
     }
 
     abstract fun setup()

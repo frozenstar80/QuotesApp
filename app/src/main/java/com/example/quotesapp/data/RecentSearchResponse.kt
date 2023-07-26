@@ -4,7 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class RecentSearchResponse(@SerializedName("status"  ) var status  : Boolean? = null,
                                 @SerializedName("message" ) var message : String?  = null,
-                                @SerializedName("data"    ) var data    : RecentSearchData?    = RecentSearchData())
+                                @SerializedName("data"    ) var data    : RecentSearchData?    = RecentSearchData()
+)
 data class RecentSearchData(
     @SerializedName("_id"       ) var Id        : String?           = null,
     @SerializedName("search_by" ) var searchBy  : String?           = null,

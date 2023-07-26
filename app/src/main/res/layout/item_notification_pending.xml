@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/dp_16"
+    android:layout_marginHorizontal="@dimen/dp_24"
+    app:cardCornerRadius="@dimen/dp_16"
+    android:padding="@dimen/dp_16"
+    android:backgroundTint="@color/white"
+    app:layout_constraintTop_toBottomOf="@id/txt_document"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_16"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_profile_pic"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCircle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="John Doe"
+            android:layout_marginStart="@dimen/dp_16"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+            app:layout_constraintTop_toTopOf="@+id/img_profile_pic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_follower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            tools:text="240k Followers • 32k Following"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+            app:layout_constraintTop_toBottomOf="@+id/txt_user" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_accept"
+            style="@style/YellowMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/accept"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_reject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_follower" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_reject"
+            style="@style/WhiteMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/reject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_accept"
+            app:layout_constraintTop_toBottomOf="@id/txt_follower" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

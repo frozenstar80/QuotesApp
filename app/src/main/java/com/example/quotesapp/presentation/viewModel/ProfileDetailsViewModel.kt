@@ -18,9 +18,9 @@ class ProfileDetailsViewModel @Inject constructor(
     private val _postLiveData: MutableLiveData<ShowOwnProfileResponse> = MutableLiveData()
     val postLiveData get() = _postLiveData
 
-    fun showOwnProfile(){
+    fun showOwnProfile(token:String){
         viewModelScope.launch {
-            dataRepository.showOwnProfile().catch { e->
+            dataRepository.showOwnProfile(token).catch { e->
                 Log.d("data", "endpoint: ${e.message}")
             }.collect{response->
                 _postLiveData.value = response

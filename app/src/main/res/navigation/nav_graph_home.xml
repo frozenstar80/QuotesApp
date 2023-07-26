@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.example.quotesapp.presentation.fragment.HomeFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_home_to_searchPeopleFragment"
@@ -15,41 +15,497 @@
         <action
             android:id="@+id/action_home_to_profileDetailsFragment"
             app:destination="@id/profileDetailsFragment" />
+        <action
+            android:id="@+id/action_home_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_home_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+        <action
+            android:id="@+id/action_home_to_video"
+            app:destination="@id/video" />
+        <action
+            android:id="@+id/action_home_to_photo"
+            app:destination="@id/photo" />
+        <action
+            android:id="@+id/action_home_to_documents"
+            app:destination="@id/documents" />
+        <action
+            android:id="@+id/action_home_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_home_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <action
+            android:id="@+id/action_home_to_videoPlayerBottomSheetFragment"
+            app:destination="@id/videoPlayerBottomSheetFragment" />
+        <action
+            android:id="@+id/action_home_to_burialItemsHostFragment"
+            app:destination="@id/burialItemsHostFragment" />
     </fragment>
     <fragment
         android:id="@+id/documents"
-        android:name="com.example.quotesapp.presentation.fragment.DocumentsFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.DocumentsFragment"
         android:label="fragment_documents"
-        tools:layout="@layout/fragment_documents" />
+        tools:layout="@layout/fragment_documents" >
+        <argument
+            android:name="sourceInside"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_documents_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="isMemberPlus"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="otherUser"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <argument
+            android:name="isInside"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <action
+            android:id="@+id/action_documents_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+    </fragment>
     <fragment
         android:id="@+id/video"
-        android:name="com.example.quotesapp.presentation.fragment.VideosFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.VideosFragment"
         android:label="fragment_videos"
-        tools:layout="@layout/fragment_videos" />
+        tools:layout="@layout/fragment_videos" >
+        <argument
+            android:name="sourceInside"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_video_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="isMemberPlus"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isInside"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <argument
+            android:name="otherUser"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <action
+            android:id="@+id/action_video_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+        <action
+            android:id="@+id/action_video_to_videoPlayerBottomSheetFragment"
+            app:destination="@id/videoPlayerBottomSheetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/photo"
-        android:name="com.example.quotesapp.presentation.fragment.PhotosFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.PhotosFragment"
         android:label="fragment_photos"
-        tools:layout="@layout/fragment_photos" />
+        tools:layout="@layout/fragment_photos" >
+        <argument
+            android:name="sourceInside"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_photo_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="isInside"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <argument
+            android:name="otherUser"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <argument
+            android:name="isMemberPlus"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_photo_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchPeopleFragment"
         android:name="com.example.quotesapp.presentation.fragment.SearchPeopleFragment"
         android:label="SearchPeopleFragment" >
         <action
-            android:id="@+id/action_searchPeopleFragment_to_profileDetailsFragment"
-            app:destination="@id/profileDetailsFragment" />
+            android:id="@+id/action_searchPeopleFragment_to_otherUserProfileDetailsFragment"
+            app:destination="@id/otherUserProfileDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileDetailsFragment"
-        android:name="com.example.quotesapp.presentation.fragment.ProfileDetailsFragment"
+        android:name="com.example.quotesapp.presentation.fragment.profile.ProfileDetailsFragment"
         android:label="ProfileDetailsFragment" >
         <action
             android:id="@+id/action_profileDetailsFragment_to_createProfileFragment"
             app:destination="@id/createProfileFragment" />
+
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_createMemberProfileFragment"
+            app:destination="@id/createMemberProfileFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_memberProfileDetailsFragment"
+            app:destination="@id/memberProfileDetailsFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_video"
+            app:destination="@id/video" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_photo"
+            app:destination="@id/photo" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_documents"
+            app:destination="@id/documents" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_hostFollowersFollowingFragment"
+            app:destination="@id/hostFollowersFollowingFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_exchangeFragment"
+            app:destination="@id/exchangeFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_burialItemsHostFragment"
+            app:destination="@id/burialItemsHostFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_profileSettings"
+            app:destination="@id/profileSettings" />
     </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
-        android:name="com.example.quotesapp.presentation.fragment.CreateProfileFragment"
-        android:label="CreateProfileFragment" />
+        android:name="com.example.quotesapp.presentation.fragment.profile.CreateProfileFragment"
+        android:label="CreateProfileFragment" >
+        <argument
+            android:name="userData"
+            app:argType="com.example.quotesapp.data.UserDataResponse"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMemberProfileFragment"
+        android:name="com.example.quotesapp.presentation.fragment.profile.CreateMemberProfileFragment"
+        android:label="CreateMemberProfileFragment" >
+        <argument
+            android:name="userData"
+            app:argType="com.example.quotesapp.data.UserDataResponse"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_createMemberProfileFragment_to_memberProfileDetailsFragment"
+            app:destination="@id/memberProfileDetailsFragment"
+            app:popUpTo="@id/memberProfileDetailsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/otherUserProfileDetailsFragment"
+        android:name="com.example.quotesapp.presentation.fragment.profile.OtherUserProfileDetailsFragment"
+        android:label="OtherUserProfileDetailsFragment" >
+        <argument
+            android:name="otherUserData"
+            app:argType="com.example.quotesapp.data.UserDataResponse"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_documents"
+            app:destination="@id/documents" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_video"
+            app:destination="@id/video" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_photo"
+            app:destination="@id/photo" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_hostFollowersFollowingFragment"
+            app:destination="@id/hostFollowersFollowingFragment" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_otherUserExchangeFragment"
+            app:destination="@id/otherUserExchangeFragment" />
+        <action
+            android:id="@+id/action_otherUserProfileDetailsFragment_to_burialItemsHostFragment"
+            app:destination="@id/burialItemsHostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberProfileDetailsFragment"
+        android:name="com.example.quotesapp.presentation.fragment.profile.MemberProfileDetailsFragment"
+        android:label="MemberProfileDetailsFragment" >
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_createMemberProfileFragment"
+            app:destination="@id/createMemberProfileFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_video"
+            app:destination="@id/video" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_photo"
+            app:destination="@id/photo" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_documents"
+            app:destination="@id/documents" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_hostFollowersFollowingFragment"
+            app:destination="@id/hostFollowersFollowingFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_exchangeFragment"
+            app:destination="@id/exchangeFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_burialItemsHostFragment"
+            app:destination="@id/burialItemsHostFragment" />
+        <action
+            android:id="@+id/action_memberProfileDetailsFragment_to_profileSettings"
+            app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.quotesapp.presentation.fragment.NotificationFragment"
+        android:label="NotificationFragment" />
+    <fragment
+        android:id="@+id/uploadDataFragment"
+        android:name="com.example.quotesapp.presentation.fragment.UploadDataFragment"
+        android:label="UploadDataFragment" >
+
+        <argument
+            android:name="isExchangeFragment"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+        <argument
+            android:name="dataType"
+            app:argType="string" />
+        <argument
+            android:name="isNormalUser"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="file"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="documentImageVideoQuoteId"
+            app:argType="string"
+            android:defaultValue=""/>
+        <action
+            android:id="@+id/action_uploadDataFragment_to_sentExchangeFragment"
+            app:destination="@id/sentExchangeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/uploadDataFragment"/>
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/quotesFragment"
+        android:name="com.example.quotesapp.presentation.fragment.QuotesFragment"
+        android:label="QuotesFragment" >
+        <argument
+            android:name="sourceInside"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_quotesFragment_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="isMemberPlus"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isInside"
+            app:argType="string"
+            android:defaultValue="no"/>
+        <action
+            android:id="@+id/action_quotesFragment_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+        <argument
+            android:name="otherUser"
+            app:argType="string"
+            android:defaultValue="no"/>
+    </fragment>
+    <fragment
+        android:id="@+id/displayFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.DisplayFragment"
+        android:label="DisplayFragment" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="isExchnage"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/followersFragment"
+        android:name="com.example.quotesapp.presentation.fragment.follow.FollowersFragment"
+        android:label="FollowersFragment" />
+    <fragment
+        android:id="@+id/followingFragment"
+        android:name="com.example.quotesapp.presentation.fragment.follow.FollowingFragment"
+        android:label="FollowingFragment" />
+    <fragment
+        android:id="@+id/hostFollowersFollowingFragment"
+        android:name="com.example.quotesapp.presentation.fragment.follow.HostFollowersFollowingFragment"
+        android:label="HostFollowersFollowingFragment" >
+        <argument
+            android:name="isNormalUser"
+            app:argType="boolean" />
+        <argument
+            android:name="isFollower"
+            app:argType="boolean" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_hostFollowersFollowingFragment_to_otherUserProfileDetailsFragment"
+            app:destination="@id/otherUserProfileDetailsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerBottomSheetFragment"
+        android:name="com.example.quotesapp.presentation.fragment.dashboard.VideoPlayerFragment"
+        android:label="VideoPlayerBottomSheetFragment" >
+
+        <argument
+            android:name="videofile"
+            app:argType="string" />
+        <argument
+            android:name="isExchange"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/receivedExchangeFragment"
+        android:name="com.example.quotesapp.presentation.fragment.exchange.ReceivedExchangeFragment"
+        android:label="ReceivedExchangeFragment" />
+    <fragment
+        android:id="@+id/exchangeFragment"
+        android:name="com.example.quotesapp.presentation.fragment.exchange.ExchangeFragment"
+        android:label="ExchangeFragment" >
+        <action
+            android:id="@+id/action_exchangeFragment_to_displayFragment"
+            app:destination="@id/displayFragment" />
+        <action
+            android:id="@+id/action_exchangeFragment_to_videoPlayerBottomSheetFragment"
+            app:destination="@id/videoPlayerBottomSheetFragment" />
+        <argument
+            android:name="userType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherUserExchangeFragment"
+        android:name="com.example.quotesapp.presentation.fragment.exchange.OtherUserExchangeFragment"
+        android:label="OtherUserExchangeFragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="userType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_otherUserExchangeFragment_to_uploadDataFragment"
+            app:destination="@id/uploadDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sentExchangeFragment"
+        android:name="com.example.quotesapp.presentation.fragment.exchange.SentExchangeFragment"
+        android:label="SentExchangeFragment" >
+        <argument
+            android:name="userType"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+    </fragment>
+    <fragment
+        android:id="@+id/burialItemsHostFragment"
+        android:name="com.example.quotesapp.presentation.fragment.buriaModule.BurialItemsHostFragment"
+        android:label="BurialItemsHostFragment" >
+
+        <argument
+            android:name="userType"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="itemType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_burialItemsHostFragment_to_uploadBurialFragment"
+            app:destination="@id/uploadBurialFragment" />
+        <argument
+            android:name="isOtherProfile"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_burialItemsHostFragment_to_displayFragment"
+            app:destination="@id/displayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadBurialFragment"
+        android:name="com.example.quotesapp.presentation.fragment.buriaModule.UploadBurialFragment"
+        android:label="UploadBurialFragment" >
+        <argument
+            android:name="userType"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="itemType"
+            app:argType="string" />
+        <argument
+            android:name="tab"
+            app:argType="string" />
+        <argument
+            android:name="burialData"
+            app:argType="com.example.quotesapp.data.BurialData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSettings"
+        android:name="com.example.quotesapp.presentation.fragment.profile.ProfileSettings"
+        android:label="ProfileSettings" />
+
 
 </navigation>

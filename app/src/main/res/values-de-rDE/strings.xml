@@ -1,45 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Denken Sie daran, App</string>
+    <string name="app_name">REMEMBER</string>
     <string name="enter_email_id">E-Mail-ID eingeben</string>
     <string name="forgot_password">Passwort vergessen</string>
     <string name="login">Anmeldung</string>
     <string name="password">Passwort</string>
     <string name="register_now">Jetzt registrieren</string>
     <string name="select_language">Sprache auswählen</string>
-    <string name="view_all_quotes">View all quotes</string>
-    <string name="nur_die_harten_kommen_in_den_garten">“Nur die Harten kommen\n in den Garten”</string>
+    <string name="create_quote">"Erstellte Zitate werden hier angezeigt.\n Beginnen Sie mit der Erstellung Ihrer eigenen Zitate"</string>
+    <string name="view_all_quotes">Alle Zitate anzeigen</string>
+    <string name="main_screen_quote">“Liebe hat kein Alter,\n keine Grenze und keinen Tod”</string>
     <string name="english">English</string>
     <string name="german">German</string>
     <string name="login_sucess">Anmeldung erfolgreich</string>
     <string name="create_profile">Profil erstellen</string>
     <string name="register_sucess">Registrierung erfolgreich</string>
     <string name="confirm_pass_toast">Confirm Password do not matches with Password. Please Check Your Password</string>
-    <string name="enter_pass_toast">Passwort eingeben</string>
     <string name="verify_email_id">Überprüfen Sie die E-Mail-ID</string>
     <string name="reset_password">Passwort zurücksetzen</string>
     <string name="profile_photo">Profilfoto</string>
     <string name="first_name">Vorname</string>
-    <string name="last_name">Familienname, Nachname</string>
+    <string name="last_name">Nachname</string>
     <string name="relationship">Beziehung</string>
     <string name="birth_date">Geburtsdatum</string>
     <string name="date_of_death">Sterbedatum</string>
     <string name="last_place_of_residence">Letzter Wohnsitz</string>
     <string name="my_final_words">Meine letzten Worte</string>
-    <string name="what_i_want_to_share_with_you">Was ich mit dir teilen möchte</string>
-    <string name="what_i_guessed">Was ich vermutet habe</string>
+    <string name="what_i_want_to_share_with_you">Meine schönsten Momente</string>
+    <string name="what_i_guessed">Was mir wichtig war im Leben</string>
     <string name="quotations">Zitate</string>
     <string name="home">Heim</string>
-    <string name="documents">Dokumentieren</string>
+    <string name="documents">Dokumente</string>
     <string name="video">Video</string>
     <string name="photo">Foto</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hallo">👋🏽 Hallo</string>
     <string name="fisher">Fisher</string>
     <string name="search_people">Personen suchen</string>
     <string name="ideas">Ideen</string>
-    <string name="burial">Beerdigung</string>
+    <string name="burial">Bestattung</string>
     <string name="motivation">Motivation</string>
-    <string name="connections">Verknüpfungen</string>
-</resources>
+    <string name="links">Links</string>
+    <string name="first_name_xd">Vorname</string>
+    <string name="last_name_xd">Nachname</string>
+    <string name="wife_husband_name">Name der Ehefrau/des Ehemanns</string>
+    <string name="upload_profile_picture_toast">Bitte laden Sie Ihr Profilbild hoch</string>
+    <string name="full_name_toast">Bitte tragen Sie Ihren vollen Namen ein</string>
+    <string name="profile_image_change_error">Fehler beim Ändern des Profilbilds</string>
+    <string name="profile_created_successfuly">Profil erfolgreich erstellt</string>
+    <string name="error_occured_pic_upload">Beim Hochladen des Profilbilds ist ein Fehler aufgetreten. Bitte versuche es erneut</string>
+    <string name="confirm_password">Bestätige das Passwort</string>
+    <string name="grant_read_permission">Bitte erteilen Sie die Berechtigung zum Lesen des Speichers</string>
+    <string name="followers">Anhänger</string>
+    <string name="following">Folgend</string>
+    <string name="search_result">Suchergebnis</string>
+    <string name="friends">Freunde</string>
+    <string name="acquaintance">Bekanntschaft</string>
+    <string name="exchange">Austausch</string>
+    <string name="document">Dokumentieren</string>
+    <string name="pictures">Bilder</string>
+    <string name="videos">Videos</string>
+    <string name="recent_search">Aktuelles Ergebnis</string>
+    <string name="something_went_wrong">Etwas ist schief gelaufen</string>
+    <string name="follow">Folgen</string>
+    <string name="create_member_plus_acoount">Erstellen Sie ein Member PLUS-Konto</string>
+    <string name="update_profile">Profil aktualisieren</string>
+    <string name="email_address_or_password_is_missing">E-Mail-Adresse oder Passwort fehlt</string>
+    <string name="error">Fehler</string>
+    <string name="view_all">Alle ansehen</string>
+    <string name="member_plus">Mitglied PLUS</string>
+    <string name="quote">Zitieren</string>
+    <string name="search_people_here">Suchen Sie hier nach Personen</string>
+    <string name="upload_your_first_video_by_clicking">Laden Sie Ihr erstes Video per\nKlick hoch </string>
+    <string name="upload_your_first_picture_by_clicking">Laden Sie Ihr erstes Bild hoch, indem Sie\nklicken </string>
+    <string name="save_your_first_document_by_clicking">Speichern Sie Ihr erstes Dokument durch\nKlicken </string>
+    <string name="create_your_first_own_quotes_by_clicking">Erstellen Sie Ihre ersten eigenen Zitate per\nKlick </string>
+    <string name="button"> Taste </string>
+        <string name="update_member_plus_profile">Mitglied Plus Profil aktualisieren</string>
+        <string name="create_member_plus_profile">Mitglied Plus Profil erstellen</string>
+        <string name="requested">Angefordert</string>
+        <string name="notification">Benachrichtigung</string>
+        <string name="accept">Akzeptieren</string>
+        <string name="reject">Ablehnen</string>
+        <string name="requested_to_follow_you">hat um Folgen gebeten</string>
+        <string name="member_plus_new">Kontowechsel</string>
+        <string name="member_profile_created_successfully">Mitgliedsprofil erfolgreich erstellt</string>
+        <string name="member_profile_update_successfully">Mitgliedsprofil erfolgreich aktualisiert</string>
+        <string name="request_sent">Anfrage gesendet</string>
+        <string name="delete">Löschen</string>
+        <string name="save">Speichern</string>
+        <string name="edit"><u>Bearbeiten</u></string>
+        <string name="successfully_deleted">Erfolgreich gelöscht</string>
+        <string name="add_video">Video hinzufügen</string>
+        <string name="add_image_title">Bildtitel hinzufügen</string>
+        <string name="edit_image">Bild bearbeiten</string>
+        <string name="edit_quote">Zitat bearbeiten</string>
+        <string name="add_caption">Beschriftung hinzufügen</string>
+        <string name="add_document_title">Dokumenttitel hinzufügen</string>
+        <string name="edit_document">Dokument bearbeiten</string>
+        <string name="edit_video">Video bearbeiten</string>
+        <string name="add_video_title">Videotitel hinzufügen</string>
+        <string name="upload_quote">Zitat hochladen</string>
+        <string name="add_quote">Zitat hinzufügen</string>
+        <string name="upload_video">Video hochladen</string>
+        <string name="upload_document">Dokument hochladen</string>
+        <string name="upload_image">Bild hochladen</string>
+        <string name="add_image">Bild hinzufügen</string>
+        <string name="add_document">Dokument hinzufügen</string>
+        <string name="updated_successfully">Erfolgreich aktualisiert</string>
+        <string name="member_plus_caps">MITGLIED PLUS</string>
+        <string name="sent">GESCHICKT</string>
+        <string name="received">EMPFANGEN</string>
+        <string name="remove_follower">Follower entfernen</string>
+        <string name="do_you_want_to_remove_this_user">Möchten Sie diesen Benutzer entfernen?</string>
+        <string name="cancel">Abbrechen</string>
+        <string name="cancelled">Abgebrochen</string>
+        <string name="yes">Ja</string>
+        <string name="unfollow">Nicht mehr folgen</string>
+        <string name="do_you_want_to_unfollow_this_user">Möchten Sie diesem Benutzer nicht mehr folgen?</string>
+        <string name="uploaded">Hochgeladen</string>
+        <string name="do_you_want_to_delete">Möchten Sie löschen:</string>
+        <string name="file_is_getting_uploaded_please_wait">Die Datei wird hochgeladen. Bitte warten</string>
+        <string name="upload_first">Zuerst hochladen</string>
+        <string name="enter_caption">Beschriftung eingeben</string>
+        <string name="something_went_wrong_while_loading_followers_details">Beim Laden der Follower-Details ist etwas schiefgegangen</string>
+        <string name="started_following_you">Begann dir zu folgen.</string>
+        <string name="upload_your_first_exchange_by_clicking">Laden Sie Ihre Exchange-Datei hoch, indem Sie\nauf klicken</string>
+        <string name="there_are_no_notifications">Es liegen keine Benachrichtigungen vor</string>
+    <string name="no_exchange_is_received">Kein Austausch erhalten</string>
+    <string name="no_exchange_is_sent">Kein Austausch gesendet</string>
+    <string name="please_wait_while_video_is_getting_uploaded">Bitte warten Sie, während das Video hochgeladen wird</string>
+    <string name="saved">Gespeichert</string>
+    <string name="documents_are_not_yet_uploaded">Dokumente wurden noch nicht hochgeladen</string>
+    <string name="pictures_are_not_uploaded_yet">Bilder wurden noch nicht hochgeladen</string>
+    <string name="videos_are_not_uploaded_yet">Videos wurden noch nicht hochgeladen</string>
+    <string name="with_you">"Mit dir"</string>
+    <string name="shared_a">"Hat etwas geteilt: "</string>
+    <string name="with">"mit"</string>
+    <string name="you_shared_a">"Du hast etwas geteilt: "</string>
+    <string name="full_name">Vollständiger Name</string>
+    <string name="please_add_caption">Please Add Caption</string>
+    <string name="please_add_title">Please Add Title</string>
+    <string name="please_upload_image">Please Upload Image</string>
+    <string name="burial_1">Bestattungsverfahren</string>
+    <string name="burial_2">Liedtexte, Lieder</string>
+    <string name="burial_3">Nachruf</string>
+    <string name="burial_4">Informationen</string>
+    <string name="burial_5">Bestattung (Art/Grab)</string>
+    <string name="motiv_1">Andere Kulturen</string>
+    <string name="motiv_2">Life Hacks</string>
+    <string name="motiv_3">Ziel</string>
+    <string name="motiv_4">Sprüche</string>
+    <string name="motiv_5">Geschichten</string>
+    <string name="links_1">Bestattungsunternehmen</string>
+    <string name="links_2">Rechtsanwälte</string>
+    <string name="links_3">Notare</string>
+    <string name="links_4">Herzunterstützung</string>
+    <string name="links_5">Beileidskarten</string>
+    <string name="links_6">Erste Hilfe</string>
+    <string name="ideas_1">Ideen</string>
+    <string name="ideas_2">Kontodetails</string>
+    <string name="ideas_3">Zahlungsfunktion</string>
+    <string name="ideas_4">Verbesserungen</string>
+    <string name="ideas_5">Impressum</string>
+    <string name="enter_description">Beschreibung eingeben</string>
+    <string name="enter_title">Titel eingeben</string>
+    <string name="only_friends_can_see_the_data_which_is_locked">Nur Freunde können die gesperrten Daten sehen</string>
+    <string name="app_version_1_0v">App-Version - 1.0v</string>
+    <string name="privacy_policy">Datenschutzrichtlinie</string>
+    <string name="terms_amp_conditions"><![CDATA[Nutzungsbedingungen]]></string>
+    <string name="logout">Abmelden</string>
+    <string name="delete_account">Konto löschen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="love_has_no_age_no_limit_and_no_death">Liebe hat kein Alter, keine Grenzen und keinen Tod</string>
+    <string name="colors_are_the_smiles_of_nature">Farben sind das Lächeln der Natur</string>
+    <string name="being_happy_never_goes_out_of_style">Glücklich sein gerät nie aus der Mode</string>
+    <string name="i_cannot_escape_death_but_at_least_i_can_escape_the_fear_of_it">Ich kann dem Tod nicht entkommen, aber zumindest kann ich der Angst davor entkommen.</string>
+    <string name="to_love_oneself_is_the_beginning_of_a_lifelong_romance">Sich selbst zu lieben ist der Beginn einer lebenslangen Romanze</string>
+    <string name="find_out_who_you_are_and_do_it_on_purpose">Finde heraus, wer du bist, und tue es mit Absicht</string>
+    <string name="do_not_judge_me_by_my_success_judge_me_by_how_many_times_i_fell_down_and_got_back_up_again">Beurteile mich nicht nach meinem Erfolg, sondern danach, wie oft ich hingefallen bin und wieder aufgestanden bin</string>
+    <string name="it_is_not_death_that_a_man_should_fear_but_rather_he_should_fear_never_beginning_to_live">Ein Mensch sollte nicht den Tod fürchten, sondern vielmehr sollte er die Angst davor fürchten, nie zu leben.</string>
+    <string name="for_every_minute_you_are_angry_you_lose_sixty_seconds_of_happiness">Für jede Minute, in der du wütend bist, verlierst du sechzig Sekunden Glück</string>
+    <string name="the_biggest_adventure_you_can_ever_take_is_to_live_the_life_of_your_dreams">Das größte Abenteuer, das du je erleben kannst, besteht darin, das Leben deiner Träume zu leben</string>
+    <string name="share_using">Teilen mit</string>
+    <string name="share_body"><![CDATA[Erinnere dich - Beste Android-App für Freunde und Familien, um die Erinnerungen zu speichern. \n\n<App-Link>]]></string>
+
+
+
+
+
+    <string-array name="relationship_array">
+                <item>Beziehung</item>
+                <item>Vater</item>
+                <item>Mutter</item>
+                <item>Sohn</item>
+                <item>Tochter</item>
+                <item>Ehemann</item>
+                <item>Ehefrau</item>
+                <item>Bruder</item>
+                <item>Schwester</item>
+                <item>Großvater</item>
+                <item>Großmutter</item>
+                <item>Enkelsohn</item>
+                <item>Onkel</item>
+                <item>Tante</item>
+                <item>Neffe</item>
+                <item>Nichte</item>
+                <item>Cousin</item>
+                <item>Unbekannt</item>
+            </string-array>
+    </resources>
