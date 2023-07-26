@@ -3,11 +3,10 @@ package com.example.quotesapp.presentation.fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quotesapp.R
 import com.example.quotesapp.databinding.FragmentSearchPeopleBinding
@@ -15,6 +14,8 @@ import com.example.quotesapp.presentation.adapter.RecentSearchAdapter
 import com.example.quotesapp.presentation.adapter.SearchUsersAdapter
 import com.example.quotesapp.presentation.viewModel.SearchPeopleViewModel
 import com.example.quotesapp.util.Constants
+import com.example.quotesapp.util.EventObserver
+import com.example.quotesapp.util.SearchUserItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
@@ -22,7 +23,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SearchPeopleFragment : BaseFragment<FragmentSearchPeopleBinding>() {
+class SearchPeopleFragment : BaseFragment<FragmentSearchPeopleBinding>(), SearchUserItemClickListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchPeopleBinding =
         FragmentSearchPeopleBinding::inflate
 
@@ -38,7 +39,7 @@ private val searchPeopleViewModel by viewModels<SearchPeopleViewModel>()
             if (it.data?.users?.isNotEmpty() == true)
                 binding?.txtRecentSearch?.text = resources.getString(R.string.recent_search)
             val recentSearchAdapter =
-                it.data?.users?.let { it1 -> RecentSearchAdapter(requireContext(), it1) }
+                it.data?.users?.let { it1 -> RecentSearchAdapter(requireContext(), it1,this) }
                 binding?.rvRecentSearchedPeople?.apply {
                 adapter = recentSearchAdapter
                 layoutManager = LinearLayoutManager(requireContext())
@@ -51,7 +52,7 @@ private val searchPeopleViewModel by viewModels<SearchPeopleViewModel>()
                 binding?.txtNoOfPeopleFound?.isVisible = false
                 binding?.rvSearchedPeople?.isVisible = false
                 binding?.rvSearchedPeople?.apply {
-                    val searchUsersAdapter = SearchUsersAdapter(requireContext(), arrayListOf())
+                    val searchUsersAdapter = SearchUsersAdapter(requireContext(), arrayListOf(),this@SearchPeopleFragment)
                     adapter = searchUsersAdapter
                     layoutManager = LinearLayoutManager(requireContext())
                 }
@@ -74,12 +75,20 @@ private val searchPeopleViewModel by viewModels<SearchPeopleViewModel>()
             binding?.txtNoOfPeopleFound?.isVisible = true
             binding?.rvSearchedPeople?.isVisible = true
             binding?.txtNoOfPeopleFound?.text = "${resources.getString(R.string.search_result)} (${it.data.size})"
-               val searchUsersAdapter = SearchUsersAdapter(requireContext(),it.data)
+               val searchUsersAdapter = SearchUsersAdapter(requireContext(),it.data,this)
                binding?.rvSearchedPeople?.apply {
                    adapter = searchUsersAdapter
                    layoutManager = LinearLayoutManager(requireContext())
                }
         }
+        searchPeopleViewModel.otherUserProfileLiveData.observe(this,EventObserver {
+            if (it.status==true) {
+                findNavController().navigate(SearchPeopleFragmentDirections.actionSearchPeopleFragmentToOtherUserProfileDetailsFragment(otherUserData = it.data))
+            }else
+            {
+                toast(resources.getString(R.string.something_went_wrong))
+            }
+        })
 
     }
 
@@ -103,5 +112,9 @@ private val searchPeopleViewModel by viewModels<SearchPeopleViewModel>()
         val view = requireActivity().findViewById<View>(R.id.bottom_nav_view)
         view.visibility = View.VISIBLE
 
+    }
+
+    override fun clicked(id:String) {
+        searchPeopleViewModel.showUserDetails(id,savedPrefManager.getToken().toString())
     }
 }

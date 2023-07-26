@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.quotesapp.data.LoginResponse
-import com.example.quotesapp.data.SignUpResponse
+import com.example.quotesapp.data.StatusMessageResponse
 import com.example.quotesapp.domain.repository.DataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -16,7 +16,7 @@ import javax.inject.Inject
 class SignUpViewModel @Inject constructor(
     private val dataRepository: DataRepository
 ) : ViewModel() {
-    private val _postLiveData: MutableLiveData<SignUpResponse> = MutableLiveData()
+    private val _postLiveData: MutableLiveData<StatusMessageResponse> = MutableLiveData()
     val postLiveData get() = _postLiveData
 
 

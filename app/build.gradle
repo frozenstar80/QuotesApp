@@ -29,6 +29,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -86,5 +87,12 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.14.0'
+    //compress video
+    implementation 'com.github.AbedElazizShe:LightCompressor:1.2.3'
+    //compress image
+    implementation 'id.zelory:compressor:3.0.1'
+
+
+
 
 }

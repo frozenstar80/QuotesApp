@@ -19,11 +19,20 @@
         <action
             android:id="@+id/action_launchScreenFragment_to_signUpBottomSheetFragment"
             app:destination="@id/signUpBottomSheetFragment" />
+        <action
+            android:id="@+id/action_launchScreenFragment_to_viewAllQuotesFragment"
+            app:destination="@id/viewAllQuotesFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.quotesapp.presentation.fragment.CreateProfileFragment"
-        android:label="ProfileFragment" />
+        android:name="com.example.quotesapp.presentation.fragment.profile.CreateProfileFragment"
+        android:label="ProfileFragment" >
+        <argument
+            android:name="userData"
+            app:argType="com.example.quotesapp.data.UserDataResponse"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <dialog
         android:id="@+id/loginBottomSheetFragment"
         android:name="com.example.quotesapp.presentation.bottomSheet.LoginBottomSheetFragment"
@@ -79,4 +88,8 @@
             app:popUpTo="@id/forgetPasswordBottomSheetFragment"
             app:popUpToInclusive="true"/>
     </dialog>
+    <fragment
+        android:id="@+id/viewAllQuotesFragment"
+        android:name="com.example.quotesapp.presentation.fragment.ViewAllQuotesFragment"
+        android:label="ViewAllQuotesFragment" />
 </navigation>

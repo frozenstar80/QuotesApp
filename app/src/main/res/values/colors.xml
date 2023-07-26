@@ -16,5 +16,12 @@
     <color name="forget_password_color">#8D897B</color>
     <color name="light_brown">#D7CEB0</color>
     <color name="text_color_black">#121212</color>
-    <color name="brown">#52420D</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_grey">#8F9BB3</color>
+    <color name="purple">#837DC8</color>
+    <color name="purple_bg">#8582CC</color>
+    <color name="tab_color">#4A5568</color>
+    <color name="tab_selected">#276749</color>
+    <color name="tab_indicator">#C6F6D5</color>
 </resources>

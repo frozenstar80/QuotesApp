@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_16"
+        android:padding="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/txt_document">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_16">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_edit_24" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_profile_pic"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedCircle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/fisher"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+                app:layout_constraintTop_toTopOf="@+id/img_profile_pic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/member_plus"
+                android:visibility="gone"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/document_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:textColor="@color/black"
+                tools:text="Android.pdf"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableStart="@drawable/baseline_file_present_24"
+                app:layout_constraintTop_toBottomOf="@+id/img_profile_pic"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/document_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:textColor="@color/text_color"
+                tools:text="Android.pdf"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@+id/document_name"
+                tools:layout_editor_absoluteX="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>

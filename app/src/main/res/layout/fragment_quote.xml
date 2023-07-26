@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragment.dashboard.DocumentsFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quotes_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@id/appCompatImageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/black_gradient_light" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/round_back" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_50"
+        android:text="@string/quote"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_back"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView4" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_16"
+        android:padding="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_16">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_profile_pic"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedCircle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/fisher"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+                app:layout_constraintTop_toTopOf="@+id/img_profile_pic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text=""
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img_profile_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/img_profile_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_desc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_quote"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView4" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/btn_quote"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@color/white"
+        android:elevation="@dimen/dp_10"
+        android:visibility="gone"
+        app:contentPadding="15dp"
+        app:layout_constraintBottom_toTopOf="@id/img_fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCircle"
+        app:srcCompat="@drawable/ic_quote" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_fab"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:background="@color/yellow"
+        android:elevation="@dimen/dp_10"
+        app:contentPadding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        app:shapeAppearanceOverlay="@style/RoundedCircle"
+        app:srcCompat="@drawable/ic_add" />
+
+
+    <View
+        android:id="@+id/view_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3ECF1F4"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,19 @@ class GlideLoader(val context: Context) {
             e.printStackTrace()
         }
     }
+    fun loadPicFromWeb(image: Any?, imageView: ImageView?) {
+        try {
+            // Load the user image in the ImageView.
+            if (imageView != null) {
+                Glide
+                    .with(context)
+                    .load(Constants.IMAGE_BASE_URL+image) // Uri or URL of the image.circleCrop() // Scale type of the image.
+                    .into(imageView)
+            } // the view in which the image will be loaded.
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 
 
 

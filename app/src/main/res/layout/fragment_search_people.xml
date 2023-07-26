@@ -11,28 +11,47 @@
     android:layout_height="match_parent"
     android:background="@color/grey_bg_color">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/search_people_bg" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/txt_search_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_52"
         android:layout_marginHorizontal="@dimen/dp_24"
-        android:layout_marginTop="@dimen/dp_47"
         android:background="@drawable/search_view_background"
         android:drawableStart="@drawable/search_icon"
         android:drawablePadding="@dimen/dp_14"
         android:gravity="center_vertical"
+        android:focusable="true"
+        android:hint="@string/search_people_here"
         android:maxLines="1"
         android:paddingStart="@dimen/dp_16"
         android:paddingEnd="44dp"
         android:singleLine="true"
         android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColorHint="@color/hint_color"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView4"
+        tools:layout_editor_absoluteX="24dp" >
+        <requestFocus/>
+    </androidx.appcompat.widget.AppCompatEditText>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_clear_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/dp_16"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/txt_search_view"
         app:layout_constraintEnd_toEndOf="@+id/txt_search_view"
         app:layout_constraintTop_toTopOf="@+id/txt_search_view"

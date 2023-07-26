@@ -3,6 +3,8 @@ package com.example.quotesapp.presentation.bottomSheet
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -11,6 +13,7 @@ import com.example.quotesapp.databinding.BottomSheetFragmentLoginBinding
 import com.example.quotesapp.presentation.activities.HomeActivity
 import com.example.quotesapp.presentation.viewModel.LoginViewModel
 import com.example.quotesapp.presentation.viewModel.SharedLaunchScreenViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,14 +28,17 @@ class LoginBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentLogi
         launchScreenViewModel.apply {
             isLaunchPageOpened.value = false
         }
+//        binding?.edtPassword?.setText("12345678")
+
 
            loginViewModel.postLiveData.observe(this){
-               if (it.status==false) toast(it.message)
+               if (it.status==false) showSnackBar(it.message)
                else{
                    val photo = if (it.data?.user?.photos?.isEmpty() == true) "" else it.data?.user?.photos?.get(0)
                    savedPrefManager.putLoginDetails(it?.data?.token,it?.data?.user?.fullName,photo,it?.data?.user?.Id)
+                   savedPrefManager.putEmail(binding?.edtEmail?.text.toString().trim())
                    savedPrefManager.putLogin(true)
-                   toast(resources.getString(R.string.login_sucess))
+                   showSnackBar(resources.getString(R.string.login_sucess))
                    if (it?.data?.user?.fullName?.isNotEmpty() == true) {
                        startActivity(Intent(requireActivity(), HomeActivity::class.java))
                        requireActivity().finish()
@@ -63,12 +69,8 @@ class LoginBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentLogi
     }
 
     private fun validation():Boolean{
-        if (binding?.edtEmail?.text.toString().trim().isEmpty()){
-            toast(resources.getString(R.string.enter_email_id))
-            return false
-        }
-        if (binding?.edtPassword?.text.toString().trim().isEmpty()){
-            toast(resources.getString(R.string.enter_pass_toast))
+        if (binding?.edtEmail?.text.toString().trim().isEmpty() || binding?.edtPassword?.text.toString().trim().isEmpty()){
+            showSnackBar(resources.getString(R.string.email_address_or_password_is_missing))
             return false
         }
         return true
@@ -77,6 +79,21 @@ class LoginBottomSheetFragment : BaseBottomSheetFragment<BottomSheetFragmentLogi
     override fun onDestroyView() {
         super.onDestroyView()
         launchScreenViewModel.isLaunchPageOpened.value = true
+    }
+
+    private fun showSnackBar(message: String?) {
+        val view = view?.findViewById<CoordinatorLayout>(R.id.lyt_root)
+        val snackBar =
+            view?.let { Snackbar.make(it, message?: "", Snackbar.LENGTH_LONG) }
+        val snackBarView = snackBar?.view
+
+        snackBarView?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.red
+            )
+        )
+        snackBar?.show()
     }
 
 }

@@ -37,7 +37,7 @@
         android:elevation="10dp"
         android:gravity="center"
         android:elegantTextHeight="true"
-        android:text="@string/nur_die_harten_kommen_in_den_garten"
+        android:text="@string/main_screen_quote"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_20"
         android:textStyle="italic|bold"
@@ -103,7 +103,6 @@
                     android:background="@drawable/language_selector"
                     android:button="@null"
                     android:padding="@dimen/dp_16"
-                    android:checked="true"
                     android:text="@string/english"
                     android:textColor="@color/text_color" />
 

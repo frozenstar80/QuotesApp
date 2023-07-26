@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:itemBackground="@drawable/bottom_nav_tab_background"
         app:itemIconTint="@drawable/bottom_navigation_icon"
-        app:itemTextColor="@drawable/bottom_navigation_icon"
+        app:itemTextColor="@drawable/bottom_navigation_text"
         app:itemHorizontalTranslationEnabled="true"
         app:elevation="8dp"
         app:labelVisibilityMode="labeled"
